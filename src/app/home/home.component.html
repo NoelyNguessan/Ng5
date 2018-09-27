@@ -1,0 +1,26 @@
+<div class="container color-dark">
+
+   <div class="col">
+      <p>Ajouter un élément à votre liste</p>
+    </div>
+
+    <div class="col">
+      <p>Votre Liste ({{ cpt }}) </p>
+    </div>
+  </div>
+
+  <div class="container color-light" [@ambitions]="ambitions.length">
+    <div class="col">
+      <p class="sm">Ajouter un nouvel objectif à la liste de realisation jounalière.</p>
+
+      <form>
+        <input type="text" class="txt" name="item" placeholder="Ambition..." [(ngModel)]="textAmbition">
+        <input type="submit" class="btn" [value]="textBtn" (click)="Ajouter()">
+      </form>
+    </div>
+    <div class="col">
+      <p class="life-container" *ngFor="let ambition of ambitions; let cpt = index" (click)="SupprimerElement(cpt)" >
+        {{ ambition }}
+      </p>
+    </div>
+  </div>
